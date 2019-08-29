@@ -4,4 +4,4 @@ entrypoint: python runway_model.py
 cuda: 9.2
 build_steps:
     - pip install runway-python
-    - pip install requirements.tx
+    - pip install requirements.txt
