@@ -13,5 +13,6 @@ By chaining Densepose and Densepose2Texture together in runway, you can get the 
 
 
 ### Credits / Source:
-This is based on one of the [DensePose](https://github.com/facebookresearch/DensePose) notebooks: [
+- Code is based on one of the [DensePose](https://github.com/facebookresearch/DensePose) notebooks: [
 Texture Transfer Using Estimated Dense Coordinates](https://github.com/facebookresearch/DensePose/blob/master/notebooks/DensePose-RCNN-Texture-Transfer.ipynb)
+- Texture is from [surreal](https://www.di.ens.fr/willow/research/surreal/data/)
