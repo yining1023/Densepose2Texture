@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 class Densepose2Texture():
-  def __init__(self, checkpoint_path):
+  def __init__(self):
     self.Tex_Atlas = cv2.imread('./texture.png')[:,:,::-1]/255.
     self.TextureIm  = np.zeros([24,200,200,3])
 
@@ -10,7 +10,7 @@ class Densepose2Texture():
       for j in range(6):
         self.TextureIm[(6*i+j) , :,:,:] = self.Tex_Atlas[ (200*j):(200*j+200)  , (200*i):(200*i+200) ,: ]
 
-  def TransferTexture(TextureIm,im,IUV):
+  def TransferTexture(self, TextureIm,im,IUV):
     U = IUV[:,:,1]
     V = IUV[:,:,2]
 
@@ -42,6 +42,8 @@ class Densepose2Texture():
     return generated_image
   
   def generate(self, image):
-    IUV = image #cv2.imread('../DensePoseData/demo_data/synth_UV_example.png')
-    im  = np.zeros(IUV.shape)
+    # Convert PIL image(<PIL.PngImagePlugin.PngImageFile image mode=RGBA>) to opencv image
+    IUV = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+    im = np.zeros(IUV.shape)
     image = self.TransferTexture(self.TextureIm, im, IUV)
+    return image

@@ -5,7 +5,7 @@ from model import Densepose2Texture
 # again for each well formed HTTP POST request to http://localhost:9000/setup.
 @runway.setup(options={})
 def setup():
-    return DeepLabModel()
+    return Densepose2Texture()
 
 # The @runway.command() decorator is used to create interfaces to call functions
 # remotely via an HTTP endpoint. This lets you send data to, or get data from,
@@ -27,4 +27,4 @@ def generate(model, inputs):
 # creates an HTTP server that listens for and fulfills remote requests that
 # trigger commands.
 if __name__ == '__main__':
-    runway.run(host='0.0.0.0', port=9000, model_options={})
+    runway.run(host='0.0.0.0', port=9000)
