@@ -18,7 +18,7 @@ class Densepose2Texture():
     G_im = np.zeros(U.shape)
     B_im = np.zeros(U.shape)
 
-    for PartInd in range(1,23):    ## Set to xrange(1,23) to ignore the face part.
+    for PartInd in range(1,25):    ## Set to xrange(1,23) to ignore the face part.
         tex = TextureIm[PartInd-1,:,:,:].squeeze() # get texture for each part.
 
         R = tex[:,:,0]
